@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -19,6 +20,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     TextView plotTextView;
+    EditText searchbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         plotTextView = findViewById(R.id.plot_tv);
+        searchbar = findViewById(R.id.search_bar);
     }
 
     public void fetchData(View view) {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://www.omdbapi.com/?apikey=11a900d7&t=Black%20Panther";
+        String searchItem = String.valueOf(searchbar.getText());
+        String url ="http://www.omdbapi.com/?apikey=11a900d7&t=" + searchItem;
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -42,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
                         try{
                             JSONObject responseObject = new JSONObject(response);
                             String responsePiece = responseObject.getString("Plot");
+                            plotTextView.setText("Response is: " + responsePiece);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        plotTextView.setText("Response is: " + response);
+
                     }
                 }, new Response.ErrorListener() {
             @Override

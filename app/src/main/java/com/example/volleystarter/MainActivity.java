@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -13,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +22,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     TextView plotTextView;
+    ImageView posterImageView;
     EditText searchbar;
 
     @Override
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         plotTextView = findViewById(R.id.plot_tv);
+        posterImageView = findViewById(R.id.poster_iv);
         searchbar = findViewById(R.id.search_bar);
     }
 
@@ -46,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
                         try{
                             JSONObject responseObject = new JSONObject(response);
                             String responsePiece = responseObject.getString("Plot");
-                            plotTextView.setText("Response is: " + responsePiece);
+                            plotTextView.setText("Plot: " + responsePiece);
+                            String moviePosterUrl = responseObject.getString("Poster");
+                            Picasso.get().load(moviePosterUrl).into(posterImageView);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

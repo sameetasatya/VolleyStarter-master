@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
                         try{
                             JSONObject responseObject = new JSONObject(response);
-                            String responsePiece = responseObject.getString("Plot");
-                            plotTextView.setText("Plot: " + responsePiece);
-                            String moviePosterUrl = responseObject.getString("Poster");
-                            Picasso.get().load(moviePosterUrl).into(posterImageView);
+                            String responsePiecePlot = responseObject.getString("Plot");
+                            plotTextView.setText("Plot: " + responsePiecePlot);
+                            String responsePieceMoviePoster = responseObject.getString("Poster");
+                            Picasso.get().load(responsePieceMoviePoster).into(posterImageView);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

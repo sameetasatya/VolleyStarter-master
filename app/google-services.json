@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "640607124396",
+    "firebase_url": "https://rmgenerator-1.firebaseio.com",
+    "project_id": "rmgenerator-1",
+    "storage_bucket": "rmgenerator-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640607124396:android:9bfb6781052cb8edf31809",
+        "android_client_info": {
+          "package_name": "com.example.RMGenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640607124396-dvur5okeueqduul7cleqegq387b6gqm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0K4a19faGWgsokvkLn9LQShb0AaSR-FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640607124396-dvur5okeueqduul7cleqegq387b6gqm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

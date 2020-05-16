@@ -1,4 +1,4 @@
-package com.example.volleystarter;
+package com.example.RMGenerator;
 
 import org.junit.Test;
 

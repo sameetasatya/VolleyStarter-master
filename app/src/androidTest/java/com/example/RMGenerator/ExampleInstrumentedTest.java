@@ -1,4 +1,4 @@
-package com.example.volleystarter;
+package com.example.RMGenerator;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.volleystarter", appContext.getPackageName());
+        assertEquals("com.example.com.example.RMGenerator", appContext.getPackageName());
     }
 }
